@@ -8,11 +8,29 @@ class WelcomeScreen extends StatefulWidget {
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen> with SingleTickerProviderStateMixin {
+  AnimationController controller;
+  Animation animation;
+  //Animation animation_text;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(duration: Duration(seconds: 1),vsync: this);
+    animation = ColorTween(begin: Colors.blueGrey, end: Colors.white).animate(controller);
+    controller.forward();
+    //animation_text = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+    controller.addListener(() {
+      setState(() {});
+      print(animation.value);
+      //print(animation_text.value);  //controller.value
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: animation.value,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
@@ -21,9 +39,12 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/logo.png'),
+                    height: 60,//animation_text.value*100,  //*100 because when animation is used then value i.e. duration can't be greater than 1
+                  ),
                 ),
                 Text(
                   'Flash Chat',
