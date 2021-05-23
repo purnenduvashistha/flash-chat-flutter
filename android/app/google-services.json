@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "744352242796",
+    "project_id": "flash-chat-959f7",
+    "storage_bucket": "flash-chat-959f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:744352242796:android:b0052af30d8b606eb80c49",
+        "android_client_info": {
+          "package_name": "vashistha.purnendu.flash_chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "744352242796-oos6fg18palst7g474qftqomsgnd6q5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrQhTcFc9VrLzFyNzoTCeO9XmusD5W8V8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "744352242796-oos6fg18palst7g474qftqomsgnd6q5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
